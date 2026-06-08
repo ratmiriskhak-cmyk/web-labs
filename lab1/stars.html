@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Звёзды</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f6fb; }
+        nav { background-color: #1a1a2e; padding: 12px 24px; }
+        nav a { color: #e0e0ff; text-decoration: none; margin-right: 20px; font-size: 15px; }
+        nav a:hover { text-decoration: underline; }
+        .page-header { background-color: #2c1654; color: white; padding: 30px 40px; }
+        .page-header h1 { margin: 0 0 8px 0; }
+        .page-header p { margin: 0; color: #c8a8ff; }
+        .content { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
+        .section { background: white; border-radius: 8px; padding: 24px; margin-bottom: 24px;
+                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .section h2 { color: #2c1654; border-bottom: 2px solid #e8dcff; padding-bottom: 8px; }
+        .section p { color: #444; line-height: 1.7; }
+        .section ul { color: #444; line-height: 1.9; }
+        table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+        th { background-color: #2c1654; color: white; padding: 8px 12px; text-align: left; }
+        td { padding: 8px 12px; border: 1px solid #dde; }
+        tr:nth-child(even) td { background-color: #f4f0ff; }
+        footer { background-color: #1a1a2e; color: #a0a8d0; text-align: center; padding: 16px; font-size: 13px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="planets.html">Планеты</a>
+    <a href="stars.html">Звёзды</a>
+    <a href="galaxies.html">Галактики</a>
+    <a href="survey.html">Опрос</a>
+    <a href="videos.html">Видео</a>
+</nav>
+
+<div class="page-header">
+    <h1>Звёзды</h1>
+    <p>Рождение, жизнь и смерть звёзд во Вселенной</p>
+</div>
+
+<div class="content">
+
+    <div class="section" style="background-color: #fffdf0;">
+        <h2>Что такое звезда?</h2>
+        <p>
+            <strong>Звезда</strong> — это гигантский светящийся шар из плазмы, удерживаемый
+            собственной гравитацией. В её ядре идут термоядерные реакции: ядра водорода сливаются
+            в ядра гелия, выделяя колоссальное количество энергии в виде света и тепла.
+        </p>
+        <p>
+            В наблюдаемой Вселенной насчитывается около <strong>10²⁴ звёзд</strong> — это больше,
+            чем песчинок на всех пляжах Земли. Только в нашей галактике Млечный Путь содержится
+            от 100 до 400 миллиардов звёзд.
+        </p>
+    </div>
+
+    <div class="section" style="background-color: #f0f8ff;">
+        <h2>Наше Солнце</h2>
+        <p>
+            <strong>Солнце</strong> — ближайшая к Земле звезда и центр нашей планетной системы.
+            Оно относится к классу жёлтых карликов спектрального класса G2. Возраст Солнца
+            составляет около 4,6 миллиарда лет, и примерно столько же оно проживёт ещё.
+        </p>
+        <table border="1px">
+            <tr><th>Параметр</th><th>Значение</th></tr>
+            <tr><td>Диаметр</td><td>1 392 700 км (109 диаметров Земли)</td></tr>
+            <tr><td>Масса</td><td>2 × 10³⁰ кг (333 000 масс Земли)</td></tr>
+            <tr><td>Температура поверхности</td><td>~5 500 °C</td></tr>
+            <tr><td>Температура ядра</td><td>~15 000 000 °C</td></tr>
+            <tr><td>Возраст</td><td>~4,6 млрд лет</td></tr>
+            <tr><td>Расстояние до Земли</td><td>149,6 млн км (1 а.е.)</td></tr>
+        </table>
+    </div>
+
+    <div class="section" style="background-color: #fff0f8;">
+        <h2>Классификация звёзд</h2>
+        <p>
+            Звёзды классифицируют по спектральному классу (температуре поверхности)
+            с помощью последовательности <strong>O–B–A–F–G–K–M</strong>:
+        </p>
+        <table border="1px">
+            <tr><th>Класс</th><th>Цвет</th><th>Температура</th><th>Пример</th></tr>
+            <tr><td>O</td><td>Голубой</td><td>&gt; 30 000 K</td><td>Ζ Puppis</td></tr>
+            <tr><td>B</td><td>Голубовато-белый</td><td>10 000–30 000 K</td><td>Ригель</td></tr>
+            <tr><td>A</td><td>Белый</td><td>7 500–10 000 K</td><td>Сириус</td></tr>
+            <tr><td>F</td><td>Желтовато-белый</td><td>6 000–7 500 K</td><td>Полярная</td></tr>
+            <tr><td>G</td><td>Жёлтый</td><td>5 200–6 000 K</td><td>Солнце</td></tr>
+            <tr><td>K</td><td>Оранжевый</td><td>3 700–5 200 K</td><td>Арктур</td></tr>
+            <tr><td>M</td><td>Красный</td><td>&lt; 3 700 K</td><td>Бетельгейзе</td></tr>
+        </table>
+    </div>
+
+    <div class="section" style="background-color: #f0fff0;">
+        <h2>Жизненный цикл звезды</h2>
+        <p>Путь звезды зависит от её начальной массы:</p>
+        <ul>
+            <li><strong>Туманность</strong> — облако газа и пыли, из которого рождается звезда</li>
+            <li><strong>Протозвезда</strong> — сжимающийся газовый шар, разогревающийся под действием гравитации</li>
+            <li><strong>Главная последовательность</strong> — стадия стабильного горения (Солнце сейчас здесь)</li>
+            <li><strong>Красный гигант / сверхгигант</strong> — расширение после выгорания водорода</li>
+            <li><strong>Конец:</strong> маломассивные звёзды → белый карлик → чёрный карлик;<br>
+                массивные звёзды → сверхновая → нейтронная звезда или чёрная дыра</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Сайт о Космосе. Учебный проект.
+</footer>
+
+</body>
+</html>

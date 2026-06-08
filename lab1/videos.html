@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Видео о космосе</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f6fb; }
+        nav { background-color: #1a1a2e; padding: 12px 24px; }
+        nav a { color: #e0e0ff; text-decoration: none; margin-right: 20px; font-size: 15px; }
+        nav a:hover { text-decoration: underline; }
+        .page-header { background-color: #1a0a2e; color: white; padding: 30px 40px; }
+        .page-header h1 { margin: 0 0 8px 0; }
+        .page-header p { margin: 0; color: #c0a0ff; }
+        .content { max-width: 960px; margin: 0 auto; padding: 30px 20px; }
+        .video-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+        .video-card { background: white; border-radius: 8px; overflow: hidden;
+                      box-shadow: 0 2px 6px rgba(0,0,0,0.1); flex: 1; min-width: 280px; }
+        .video-card iframe { display: block; width: 100%; }
+        .video-info { padding: 16px; }
+        .video-info h3 { margin: 0 0 8px 0; color: #1a0a2e; font-size: 15px; }
+        .video-info p { margin: 0; color: #666; font-size: 13px; line-height: 1.5; }
+        footer { background-color: #1a1a2e; color: #a0a8d0; text-align: center; padding: 16px; font-size: 13px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="planets.html">Планеты</a>
+    <a href="stars.html">Звёзды</a>
+    <a href="galaxies.html">Галактики</a>
+    <a href="survey.html">Опрос</a>
+    <a href="videos.html">Видео</a>
+</nav>
+
+<div class="page-header">
+    <h1>Видео о космосе</h1>
+    <p>Документальные ролики и научно-популярные видео о Вселенной</p>
+</div>
+
+<div class="content">
+    <div class="video-grid">
+
+        <div class="video-card" style="background-color: #f8f4ff;">
+            <iframe width="100%" height="215"
+                src="https://vkvideo.ru/video_ext.php?oid=-11525744&id=456249172&hash=f7bd8b7e525791e5&hd=4"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Солнечная система — краткий обзор</h3>
+                <p>Путешествие по восьми планетам Солнечной системы: размеры, расстояния и интересные факты.</p>
+            </div>
+        </div>
+
+        <div class="video-card" style="background-color: #f4fff8;">
+            <iframe width="100%" height="215"
+                src="https://vkvideo.ru/video_ext.php?oid=-225225538&id=456240448&hash=eebb0bc0eea7c750&hd=4"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Чёрные дыры: что это такое?</h3>
+                <p>Объяснение природы чёрных дыр, как они образуются и почему ничто не может вырваться из-за горизонта событий.</p>
+            </div>
+        </div>
+
+        <div class="video-card" style="background-color: #fff8f0;">
+            <iframe width="100%" height="215"
+                src="https://vkvideo.ru/video_ext.php?oid=-232754933&id=456239220&hash=498c290a34d12909"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Большой взрыв и рождение Вселенной</h3>
+                <p>Как из бесконечно малой точки возникла вся наблюдаемая Вселенная 13,8 миллиарда лет назад.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Сайт о Космосе. Учебный проект.
+</footer>
+
+</body>
+</html>

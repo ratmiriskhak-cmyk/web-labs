@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Опрос о космосе</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f6fb; }
+        nav { background-color: #1a1a2e; padding: 12px 24px; }
+        nav a { color: #e0e0ff; text-decoration: none; margin-right: 20px; font-size: 15px; }
+        nav a:hover { text-decoration: underline; }
+        .page-header { background-color: #1a3a1a; color: white; padding: 30px 40px; }
+        .page-header h1 { margin: 0 0 8px 0; }
+        .page-header p { margin: 0; color: #90e090; }
+        .content { max-width: 700px; margin: 0 auto; padding: 30px 20px; }
+        .form-block { background: white; border-radius: 8px; padding: 30px;
+                      box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 24px; }
+        label { display: block; font-weight: bold; color: #1a3a1a; margin-bottom: 8px; }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%; padding: 10px; border: 1px solid #ccd;
+            border-radius: 4px; font-size: 15px; box-sizing: border-box;
+        }
+        textarea { height: 100px; resize: vertical; }
+        .radio-group label, .checkbox-group label {
+            font-weight: normal; display: flex; align-items: center; gap: 8px;
+            margin-bottom: 6px; cursor: pointer;
+        }
+        input[type="radio"], input[type="checkbox"] { width: auto; }
+        input[type="submit"] {
+            background-color: #1a3a1a; color: white; border: none;
+            padding: 12px 32px; font-size: 16px; border-radius: 4px; cursor: pointer;
+        }
+        input[type="submit"]:hover { background-color: #2a5a2a; }
+        footer { background-color: #1a1a2e; color: #a0a8d0; text-align: center; padding: 16px; font-size: 13px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="planets.html">Планеты</a>
+    <a href="stars.html">Звёзды</a>
+    <a href="galaxies.html">Галактики</a>
+    <a href="survey.html">Опрос</a>
+    <a href="videos.html">Видео</a>
+</nav>
+
+<div class="page-header">
+    <h1>Опрос о космосе</h1>
+    <p>Ответьте на несколько вопросов — это займёт не более 2 минут</p>
+</div>
+
+<div class="content">
+    <div class="form-block" style="background-color: #f8fff8;">
+        <form>
+
+            <div class="form-group">
+                <label>Ваше имя:</label>
+                <input type="text" placeholder="Введите ваше имя" />
+            </div>
+
+            <div class="form-group">
+                <label>Электронная почта:</label>
+                <input type="email" placeholder="example@mail.ru" />
+            </div>
+
+            <div class="form-group">
+                <label>Насколько вас интересует космос?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="interest" /> Очень интересует — слежу за новостями</label>
+                    <label><input type="radio" name="interest" /> Интересует, но поверхностно</label>
+                    <label><input type="radio" name="interest" /> Нейтрально</label>
+                    <label><input type="radio" name="interest" /> Не особо интересует</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Какой объект вас привлекает больше всего?</label>
+                <select>
+                    <option>— Выберите вариант —</option>
+                    <option>Планеты Солнечной системы</option>
+                    <option>Звёзды и туманности</option>
+                    <option>Галактики</option>
+                    <option>Чёрные дыры</option>
+                    <option>Экзопланеты</option>
+                    <option>Комет и астероиды</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Что вы хотели бы узнать о космосе? (отметьте все подходящие)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" /> История освоения космоса</label>
+                    <label><input type="checkbox" /> Современные космические миссии</label>
+                    <label><input type="checkbox" /> Возможность жизни на других планетах</label>
+                    <label><input type="checkbox" /> Физика чёрных дыр и нейтронных звёзд</label>
+                    <label><input type="checkbox" /> Будущее человечества в космосе</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Смотрели ли вы когда-нибудь в телескоп?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="telescope" /> Да, регулярно</label>
+                    <label><input type="radio" name="telescope" /> Да, несколько раз</label>
+                    <label><input type="radio" name="telescope" /> Нет, но хотел(а) бы</label>
+                    <label><input type="radio" name="telescope" /> Нет и не планирую</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ваши комментарии или пожелания к сайту:</label>
+                <textarea placeholder="Напишите здесь..."></textarea>
+            </div>
+
+            <input type="submit" value="Отправить ответы" />
+
+        </form>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Сайт о Космосе. Учебный проект.
+</footer>
+
+</body>
+</html>

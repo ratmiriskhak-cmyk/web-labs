@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0d0804;
+    color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ===== ЛЕВАЯ КОЛОНКА ===== */
+.left-col {
+    width: 38%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 50px 60px 60px;
+    background: linear-gradient(to right, #0d0804 75%, transparent);
+    position: relative;
+    z-index: 2;
+}
+
+.apple-logo {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 28px;
+    opacity: 0.9;
+}
+
+.iphone-title {
+    font-size: clamp(52px, 5.5vw, 90px);
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.design-asset {
+    font-size: clamp(10px, 1vw, 13px);
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    margin-bottom: 52px;
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: clamp(12px, 1.1vw, 15px);
+    color: #c06828;
+    letter-spacing: 0.3px;
+}
+
+.feature-list li::before {
+    content: '•';
+    color: #d07030;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ===== ПРАВАЯ КОЛОНКА ===== */
+.right-col {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фото iPhone — показываем целиком по центру */
+.iphone-bg {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+/* Затемнение слева у правой колонки для слияния с тёмным фоном */
+.right-col::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right, #0d0804, transparent);
+    z-index: 1;
+}
+
+/* Текст поверх фото — выше и правее, над телефоном */
+.right-text {
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    z-index: 2;
+}
+
+.iphone17-label {
+    font-size: clamp(16px, 1.8vw, 26px);
+    font-weight: 500;
+    color: #e07030;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.pro-title {
+    font-size: clamp(90px, 16vw, 240px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.85;
+    letter-spacing: -4px;
+    background: linear-gradient(160deg, #f09858 10%, #c05010 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== МЕДИА ЗАПРОСЫ ===== */
+@media screen and (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .left-col {
+        width: 100%;
+        background: linear-gradient(to bottom, #0d0804 80%, transparent);
+        padding: 50px 30px 40px;
+    }
+
+    .right-col {
+        height: 55vw;
+        min-height: 300px;
+    }
+
+    .right-col::before {
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(to bottom, #0d0804, transparent);
+        top: 0;
+        left: 0;
+    }
+
+    .right-text {
+        bottom: 8%;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left-col {
+        padding: 36px 24px;
+    }
+
+    .iphone-title {
+        font-size: 48px;
+    }
+
+    .right-col {
+        height: 70vw;
+    }
+
+    .pro-title {
+        font-size: 18vw;
+    }
+}

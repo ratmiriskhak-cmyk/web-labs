@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Лабораторная работа №5 — JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #222;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .task {
+            background: white;
+            border-left: 4px solid #3498db;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        .task h2 {
+            margin: 0 0 14px 0;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .task input[type="text"],
+        .task input[type="number"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 8px;
+            width: 160px;
+        }
+        .task button {
+            padding: 8px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .task button:hover { background: #2980b9; }
+        .output {
+            margin-top: 12px;
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 10px 14px;
+            font-size: 13px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        label { font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<h1>Лабораторная работа №5</h1>
+
+<!-- ===== ЗАДАЧА 1 ===== -->
+<div class="task">
+    <h2>Задача 1. Три числа</h2>
+    <label>Число 1: <input type="number" id="t1a" placeholder="например, 4" /></label>
+    <label>Число 2: <input type="number" id="t1b" placeholder="например, 7" /></label>
+    <label>Число 3: <input type="number" id="t1c" placeholder="например, 3" /></label><br>
+    <button onclick="task1()">Вычислить</button>
+    <div class="output" id="out1"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 2 ===== -->
+<div class="task">
+    <h2>Задача 2. Условия</h2>
+    <label>Число: <input type="number" id="t2n" placeholder="например, 15" /></label><br>
+    <button onclick="task2()">Вычислить</button>
+    <div class="output" id="out2"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 3 ===== -->
+<div class="task">
+    <h2>Задача 3. Курс доллара</h2>
+    <label>Курс доллара (руб): <input type="number" id="t3rate" placeholder="например, 90" /></label><br>
+    <button onclick="task3()">Показать таблицу</button>
+    <div class="output" id="out3"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 4 ===== -->
+<div class="task">
+    <h2>Задача 4. Шифрование числа</h2>
+    <p style="font-size:13px; color:#666; margin:0 0 8px;">
+        Принцип: цифра N → (N+1) повторений буквы алфавита под номером N (0→"a", 1→"bb", 2→"ccc", ...)
+    </p>
+    <label>Положительное целое число: <input type="text" id="t4n" placeholder="например, 3059" /></label><br>
+    <button onclick="task4()">Зашифровать</button>
+    <div class="output" id="out4"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 5 ===== -->
+<div class="task">
+    <h2>Задача 5. Массив простых чисел</h2>
+    <label>Длина массива: <input type="number" id="t5len" placeholder="например, 10" min="1" /></label><br>
+    <button onclick="task5()">Заполнить</button>
+    <div class="output" id="out5"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 6 ===== -->
+<div class="task">
+    <h2>Задача 6. Наибольший элемент с нечётным номером, делящийся на 3</h2>
+    <label>Массив (числа через пробел): <input type="text" id="t6arr" placeholder="например, 4 9 6 3 15 8 12" style="width:260px;" /></label><br>
+    <button onclick="task6()">Найти</button>
+    <div class="output" id="out6"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 7 ===== -->
+<div class="task">
+    <h2>Задача 7. Матрица с единицами на побочной диагонали</h2>
+    <label>Размер матрицы N×N: <input type="number" id="t7n" placeholder="например, 4" min="1" max="10" /></label><br>
+    <button onclick="task7()">Создать матрицу</button>
+    <div class="output" id="out7"></div>
+</div>
+
+<!-- ===== ЗАДАЧА 8 ===== -->
+<div class="task">
+    <h2>Задача 8. Замена среднего символа в трёхсимвольных фрагментах</h2>
+    <label>Строка: <input type="text" id="t8str" placeholder="например, abcdefghi" style="width:260px;" /></label><br>
+    <button onclick="task8()">Обработать</button>
+    <div class="output" id="out8"></div>
+</div>
+
+<script>
+
+// Вспомогательная функция вывода
+function show(id, text) {
+    var el = document.getElementById(id);
+    el.style.display = 'block';
+    el.textContent = text;
+    console.log('Задача ' + id.replace('out','') + ':\n' + text);
+}
+
+// ===== ЗАДАЧА 1 =====
+function task1() {
+    var a = parseFloat(document.getElementById('t1a').value);
+    var b = parseFloat(document.getElementById('t1b').value);
+    var c = parseFloat(document.getElementById('t1c').value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert('Введите все три числа!');
+        return;
+    }
+
+    var newA = a * 2;
+    var newB = b - 3;
+    var newC = c * c;
+    var sum = newA + newB + newC;
+
+    var result = 'Первое число × 2 = ' + newA + '\n'
+               + 'Второе число − 3 = ' + newB + '\n'
+               + 'Третье число² = ' + newC + '\n'
+               + 'Сумма = ' + sum;
+
+    show('out1', result);
+}
+
+// ===== ЗАДАЧА 2 =====
+function task2() {
+    var n = parseFloat(document.getElementById('t2n').value);
+
+    if (isNaN(n)) {
+        alert('Введите число!');
+        return;
+    }
+
+    var original = n;
+
+    if (n >= 2 && n <= 5) {
+        n = n + 10;
+    } else if (n >= 7 && n <= 40) {
+        n = n - 100;
+    } else if (n <= 0 || n > 3000) {
+        n = n * 3;
+    } else {
+        n = 0;
+    }
+
+    show('out2', 'Исходное число: ' + original + '\nРезультат: ' + n);
+}
+
+// ===== ЗАДАЧА 3 =====
+function task3() {
+    var rate = parseFloat(document.getElementById('t3rate').value);
+
+    if (isNaN(rate) || rate <= 0) {
+        alert('Введите положительный курс доллара!');
+        return;
+    }
+
+    var text = 'Долл.  |  Рублей  |  Кг конфет (20 руб/кг)\n';
+    text += '-------+----------+-----------------------\n';
+
+    for (var i = 1; i <= 100; i++) {
+        var rubles = i * rate;
+        var kg = (rubles / 20).toFixed(2);
+        text += i + '$    |  ' + rubles + ' р  |  ' + kg + ' кг\n';
+    }
+
+    show('out3', text);
+}
+
+// ===== ЗАДАЧА 4 =====
+function task4() {
+    var input = document.getElementById('t4n').value.trim();
+
+    if (!/^\d+$/.test(input) || input === '0') {
+        alert('Введите положительное целое число!');
+        return;
+    }
+
+    var alphabet = 'abcdefghij'; // 10 букв для цифр 0-9
+    var encrypted = '';
+
+    for (var i = 0; i < input.length; i++) {
+        var digit = parseInt(input[i]);
+        var letter = alphabet[digit];
+        var repeat = digit + 1; // цифра 0 → 1 буква, цифра 9 → 10 букв
+        encrypted += letter.repeat(repeat);
+        if (i < input.length - 1) encrypted += '-';
+    }
+
+    show('out4', 'Исходное число: ' + input + '\nЗашифровано: ' + encrypted);
+}
+
+// ===== ЗАДАЧА 5 =====
+function task5() {
+    var len = parseInt(document.getElementById('t5len').value);
+
+    if (isNaN(len) || len < 1) {
+        alert('Введите положительное число!');
+        return;
+    }
+
+    function isPrime(n) {
+        if (n < 2) return false;
+        for (var i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) return false;
+        }
+        return true;
+    }
+
+    var primes = [];
+    var num = 2;
+    while (primes.length < len) {
+        if (isPrime(num)) primes.push(num);
+        num++;
+    }
+
+    show('out5', 'Массив простых чисел (' + len + ' шт.):\n[' + primes.join(', ') + ']');
+}
+
+// ===== ЗАДАЧА 6 =====
+function task6() {
+    var input = document.getElementById('t6arr').value.trim();
+
+    if (!input) {
+        alert('Введите массив!');
+        return;
+    }
+
+    var arr = input.split(' ').map(Number);
+    var max = null;
+
+    // Нечётные номера (1-based): 1, 3, 5... = индексы 0, 2, 4...
+    for (var i = 0; i < arr.length; i += 2) {
+        if (arr[i] % 3 === 0) {
+            if (max === null || arr[i] > max) {
+                max = arr[i];
+            }
+        }
+    }
+
+    var result = 'Массив: [' + arr.join(', ') + ']\n';
+    result += 'Элементы с нечётными номерами: [' + arr.filter(function(_, i) { return i % 2 === 0; }).join(', ') + ']\n';
+
+    if (max === null) {
+        result += 'Нет элементов с нечётным номером, делящихся на 3.';
+    } else {
+        result += 'Наибольший элемент, делящийся на 3: ' + max;
+    }
+
+    show('out6', result);
+}
+
+// ===== ЗАДАЧА 7 =====
+function task7() {
+    var n = parseInt(document.getElementById('t7n').value);
+
+    if (isNaN(n) || n < 1) {
+        alert('Введите размер матрицы!');
+        return;
+    }
+
+    var matrix = [];
+    for (var i = 0; i < n; i++) {
+        matrix[i] = [];
+        for (var j = 0; j < n; j++) {
+            if (j === n - 1 - i) {
+                matrix[i][j] = 1;
+            } else {
+                matrix[i][j] = Math.floor(Math.random() * 10);
+            }
+        }
+    }
+
+    var text = 'Матрица ' + n + '×' + n + ' (побочная диагональ = 1):\n\n';
+    for (var i = 0; i < n; i++) {
+        text += matrix[i].join('  ') + '\n';
+    }
+
+    show('out7', text);
+}
+
+// ===== ЗАДАЧА 8 =====
+function task8() {
+    var str = document.getElementById('t8str').value;
+
+    if (str.length < 3) {
+        alert('Строка слишком короткая!');
+        return;
+    }
+
+    // Разбиваем на фрагменты по 3 символа
+    var fragments = [];
+    for (var i = 0; i + 2 < str.length; i += 3) {
+        fragments.push(str.slice(i, i + 3));
+    }
+
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+    var modified = fragments.map(function(f) {
+        var newChar;
+        var attempts = 0;
+        do {
+            newChar = chars[Math.floor(Math.random() * chars.length)];
+            attempts++;
+        } while (f.includes(newChar) && attempts < 1000);
+
+        return f[0] + newChar + f[2];
+    });
+
+    modified.sort();
+
+    var text = 'Исходные фрагменты:  [' + fragments.join(', ') + ']\n';
+    text += 'После замены:        [' + modified.join(', ') + ']\n';
+    text += 'По алфавиту:         [' + modified.join(', ') + ']';
+
+    show('out8', text);
+}
+
+</script>
+</body>
+</html>
